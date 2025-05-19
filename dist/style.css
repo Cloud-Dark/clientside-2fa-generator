@@ -1,0 +1,183 @@
+/* Reset margin/padding dan atur box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1d2b64, #f8cdda);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin: 0;
+}
+
+
+
+
+.container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(29, 43, 100, 0.3);
+  padding: 30px 40px;
+  max-width: 600px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 20px 30px;
+  align-items: center;
+
+  /* Animasi fade-in */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 0 0 10px;
+  font-weight: 700;
+  color: #1d2b64;
+  letter-spacing: 1.2px;
+}
+input[type="text"] {
+  font-size: 1rem;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.3s;
+  text-align: center;
+}
+input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+}
+/* Buttons container spanning two columns */
+.btn-group {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+button {
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+  flex: 1 1 130px;
+  max-width: 180px;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 15px rgba(0, 86, 179, 0.5);
+  transform: scale(1.05);
+}
+#code {
+  grid-column: 1 / -1;
+  font-size: 3rem;
+  background: #f1f3f6;
+  color: #333;
+  border-radius: 16px;
+  padding: 20px 0;
+  user-select: all;
+  letter-spacing: 10px;
+  text-align: center;
+  box-shadow: inset 0 0 8px #ddd;
+  margin: 0;
+
+  /* Animasi pulse */
+}
+#code.pulse {
+  animation: pulse 1.2s ease-in-out;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 8px 3px rgba(0, 123, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 12px 6px rgba(0, 123, 255, 0.9);
+  }
+}
+#qr {
+  grid-column: 1 / 2;
+  justify-self: center;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 6px 20px rgba(29, 43, 100, 0.15);
+  width: 200px;
+  height: 200px;
+}
+#userCodeInput {
+  grid-column: 2 / 3;
+  justify-self: stretch;
+}
+#btnValidateCode {
+  grid-column: 2 / 3;
+  justify-self: center;
+  max-width: 180px;
+}
+#validationResult {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  min-height: 1.5rem;
+  margin-top: 10px;
+  user-select: none;
+}
+#validationResult.blink {
+  animation: blink 1s ease-in-out 2;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto;
+  }
+  #qr,
+  #userCodeInput,
+  #btnValidateCode {
+    grid-column: 1 / 2 !important;
+    justify-self: center !important;
+    width: 200px;
+    max-width: 100%;
+  }
+  .btn-group {
+    flex-direction: column;
+  }
+  button {
+    max-width: 100%;
+    flex: none;
+  }
+}

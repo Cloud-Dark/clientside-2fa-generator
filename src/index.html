@@ -1,0 +1,22 @@
+
+  <div class="container">
+    <h2>TOTP Generator & QR Code</h2>
+
+    <input type="text" id="secretInput" placeholder="Enter Base32 Secret Token" autocomplete="off" />
+
+    <div class="btn-group">
+      <button id="btnGenerateQR">Generate QR Code</button>
+      <button id="btnGenerateToken">Generate Token</button>
+      <button id="btnCopyToken">Copy Token</button>
+    </div>
+
+    <p id="code">Waiting...</p>
+
+    <canvas id="qr"></canvas>
+
+    <input type="text" id="userCodeInput" placeholder="Enter Code to Validate" autocomplete="off"/>
+    <button id="btnValidateCode">Validate Code</button>
+
+    <p id="validationResult"></p>
+  </div>
+
