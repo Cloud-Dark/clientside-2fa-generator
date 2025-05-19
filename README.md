@@ -38,7 +38,7 @@ Ideal for implementing two-factor authentication (2FA) workflows and validating 
 
 ## Screenshots
 
-![Screenshot of the app showing TOTP code and QR code](screenshot.png)
+![image](https://github.com/user-attachments/assets/a772750f-173b-4ea1-8aed-4f4195435a6e)
 
 ---
 
